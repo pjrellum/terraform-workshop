@@ -1,0 +1,31 @@
+{
+  "name": "Terraform Azure Workshop",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "1.11.4"
+    },
+    "ghcr.io/devcontainers/features/azure-cli:1": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "hashicorp.terraform",
+        "ms-azuretools.vscode-azureresourcegroups"
+      ],
+      "settings": {
+        "terraform.experimentalFeatures.validateOnSave": true,
+        "terraform.experimentalFeatures.prefillRequiredFields": true
+      }
+    }
+  },
+  "postCreateCommand": "az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID && terraform --version",
+  "remoteEnv": {
+    "ARM_CLIENT_ID": "${localEnv:AZURE_CLIENT_ID}",
+    "ARM_CLIENT_SECRET": "${localEnv:AZURE_CLIENT_SECRET}",
+    "ARM_TENANT_ID": "${localEnv:AZURE_TENANT_ID}",
+    "ARM_SUBSCRIPTION_ID": "${localEnv:AZURE_SUBSCRIPTION_ID}"
+  }
+}
