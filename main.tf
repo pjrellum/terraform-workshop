@@ -30,6 +30,3 @@ resource "azurerm_storage_container" "workshop" {
   storage_account_id    = azurerm_storage_account.workshop.id
   container_access_type = "private"
 }
-
-# Demonstratie van data source
-data "azurerm_client_config" "current" {}
