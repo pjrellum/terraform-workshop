@@ -17,8 +17,3 @@ output "location" {
   description = "Azure regio waar resources zijn aangemaakt"
   value       = azurerm_resource_group.workshop.location
 }
-
-output "current_user" {
-  description = "Huidige Azure gebruiker/service principal"
-  value       = data.azurerm_client_config.current.object_id
-}
