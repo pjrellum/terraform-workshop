@@ -19,13 +19,13 @@ terraform init
 ### 2. Plan de deployment
 
 ```bash
-terraform plan -var student_name=jouwvoornaam
+terraform plan -var student_name=voornaam
 ```
 
 ### 3. Deploy de infrastructuur
 
 ```bash
-terraform apply -var student_name=jouwvoornaam
+terraform apply -var student_name=voornaam
 ```
 
 ### 4. Bekijk de outputs
@@ -37,12 +37,12 @@ terraform output
 ### 5. Ruim op (belangrijk!)
 
 ```bash
-terraform destroy -var student_name=jouwvoornaam
+terraform destroy -var student_name=voornaam
 ```
 
 ## Tips voor tijdens de workshop
 
-- Vervang "jouwvoornaam" door je eigen voornaam (alleen lowercase, 3-8 karakters)
+- Vervang "voornaam" door je eigen voornaam (alleen lowercase, 3-8 karakters)
 - Check de Azure portal om je resources te zien
 - Let op de output van elk commando
 
