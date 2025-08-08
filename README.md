@@ -21,12 +21,14 @@ terraform init
 ```bash
 terraform plan -var student_name=voornaam
 ```
+Als je in een andere dan de default omgeving _dev_ wilt gebruiken, voeg dan een ```-var environment=tst``` toe bijvoorbeeld
 
 ### 3. Deploy de infrastructuur
 
 ```bash
 terraform apply -var student_name=voornaam
 ```
+Als je in een andere dan de default omgeving _dev_ wilt gebruiken, voeg dan een ```-var environment=tst``` toe bijvoorbeeld
 
 ### 4. Bekijk de outputs
 
@@ -39,10 +41,12 @@ terraform output
 ```bash
 terraform destroy -var student_name=voornaam
 ```
+Als je in een andere dan de default omgeving _dev_ hebt gebruikt, voeg deze dan weer toe, bijvoorbeeld ```-var environment=tst``` 
 
 ## Tips voor tijdens de workshop
 
 - Vervang "voornaam" door je eigen voornaam (alleen lowercase, 3-8 karakters)
+- Specificeer eventueel een geldige omgeving
 - Check de Azure portal om je resources te zien
 - Let op de output van elk commando
 
@@ -52,4 +56,5 @@ terraform destroy -var student_name=voornaam
 - Terraform workflow (init, plan, apply, destroy)
 - Azure provider basics
 - Resource dependencies
+- Omgevingen
 - Output values
