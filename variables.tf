@@ -1,3 +1,14 @@
+variable "environment" {
+  description = "Deployment environment (dev, tst, acc, prd)"
+  type        = string
+  default     = "dev"
+  
+  validation {
+    condition     = contains(["dev", "tst", "acc", "prd"], var.environment)
+    error_message = "Environment moet een van de volgende waarden zijn: dev, tst, acc, prd."
+  }
+}
+
 variable "student_name" {
   description = "Naam van de student (gebruikt voor resource naming)"
   type        = string
